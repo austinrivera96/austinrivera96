@@ -8,7 +8,7 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 ## ⚠️ Vulnerability Management Projects
 
 - **[Vulnerability Management Program Implementation](https://github.com/austinrivera96/Vulnerability-Managment-Program/tree/main)**
-- **[Programmatic Vulnerability Remediations (PowerShell, BASH, & Shell Commands)](https://github.com/joshcybertest/programmatic-vulnerability-remediations)**
+- **[Programmatic Vulnerability Remediations (PowerShell, BASH, & Shell Commands)](https://github.com/austinrivera96/Programmatic-Vulnerability-Remediations-PowerShell-BASH-Shell-Commands-)**
 
 ## 🚨 Threat Hunting and Security Operations
 
