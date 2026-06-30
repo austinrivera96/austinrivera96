@@ -33,10 +33,6 @@ if (-not (Test-Path $regPath)) {
 }
 
 # Set MaxSize to 32768 KB (0x8000)
-New-ItemProperty -Path $regPath `
-    -Name "MaxSize" `
-    -PropertyType DWord `
-    -Value 32768 `
-    -Force
+New-ItemProperty -Path $regPath -Name "MaxSize" -PropertyType DWord -Value 32768 -Force
 
 Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application" -Name MaxSize
