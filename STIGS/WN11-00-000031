@@ -1,0 +1,75 @@
+ <#
+.SYNOPSIS
+	Enables Bitlocker Drive Encryption to require additional authentication at startup and configures TPM Startup Pin settings. 
+
+.NOTES
+    Author          : Austin Rivera
+    LinkedIn        : linkedin.com/in/austin-rivera-721448245
+    GitHub          : https://github.com/austinrivera96/austinrivera96
+    Date Created    : 2026-06-30
+    Last Modified   : 2026-06-30
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN11-00-000031
+    Documentation   : https://stigaview.com/products/win11/v2r7/WN11-00-000031/
+
+.TESTED ON
+    Date(s) Tested  : 2026-06-30
+    Tested By       : Austin Rivera
+    Systems Tested  : Austin-MDR (Windows 11)
+    PowerShell Ver. : 
+
+.USAGE
+    Put any usage instructions here.
+    Example syntax:
+    PS C:\> .\STIG-ID-WN11-00-000031.ps1 
+
+# Requires Administrator privileges
+
+# Registry path
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\FVE"
+
+# Create the registry path if it doesn't exist
+if (-not (Test-Path $regPath)) {
+    New-Item -Path $regPath -Force | Out-Null
+}
+
+# Enable "Require additional authentication at startup"
+Set-ItemProperty -Path $regPath -Name "UseAdvancedStartup" -Type DWord -Value 1
+
+# Determine whether BitLocker Network Unlock is enabled
+$NetworkUnlockEnabled = $false
+
+try {
+    $BitLockerVolume = Get-BitLockerVolume -MountPoint "C:"
+
+    if ($BitLockerVolume.KeyProtector | Where-Object {
+            $_.KeyProtectorType -match "NetworkUnlock"
+        }) {
+        $NetworkUnlockEnabled = $true
+    }
+}
+catch {
+    Write-Warning "Unable to determine BitLocker protector configuration."
+}
+
+if ($NetworkUnlockEnabled) {
+
+    Write-Host "Network Unlock detected. Configuring TPM + PIN for Network Unlock..."
+
+    Set-ItemProperty -Path $regPath -Name "UseTPMPIN" -Type DWord -Value 2
+
+    Set-ItemProperty -Path $regPath -Name "UseTPMKeyPIN" -Type DWord -Value 2
+}
+else {
+
+    Write-Host "Network Unlock not detected. Configuring TPM + Startup Key + PIN..."
+
+    Set-ItemProperty -Path $regPath -Name "UseTPMPIN" -Type DWord -Value 1
+
+    Set-ItemProperty -Path $regPath -Name "UseTPMKeyPIN" -Type DWord -Value 1
+}
+
+# Display the configured values
+Get-ItemProperty -Path $regPath -Name UseAdvancedStartup, UseTPMPIN, UseTPMKeyPIN
