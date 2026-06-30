@@ -23,7 +23,7 @@
 .USAGE
     Put any usage instructions here.
     Example syntax:
-    PS C:\> .\STIG-ID-WN10-AU-000500.ps1 
+    PS C:\> .\WN11-CC-000315.ps1 
 
 
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Installer" -Force
