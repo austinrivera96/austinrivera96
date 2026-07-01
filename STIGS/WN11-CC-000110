@@ -36,7 +36,7 @@ if(-not(Test-Path $regPath)) {
     New-ItemProperty -Path $regPath -Name DisableHTTPPrinting -PropertyType DWord -Value 1 -Force | Out-Null
 
 # Display configured values    
-    Get-ItemProperty -Path $regPath -Name DisableHTTPPrinting
+    Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Printers\" -Name DisableHTTPPrinting
 -------
 # Should return:
 DisableHTTPPrinting : 1
