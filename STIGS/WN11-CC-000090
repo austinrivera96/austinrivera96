@@ -1,6 +1,6 @@
 #
 .SYNOPSIS
-    Remediates STIG WN11-CC-000197 by disabling Windows consumer features
+    Configures registry policy processing to process Group Policy settings even when Group Policy objects have not changed.
 
 .NOTES
     Author          : Austin Rivera
@@ -23,7 +23,7 @@
 .USAGE
     Put any usage instructions here.
     Example syntax:
-    PS C:\> .\STIG-ID-WN11-CC-000197.ps1 
+    PS C:\> .\STIG-ID-WN11-CC-000090.ps1 
 
 $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{35378EAC-683F-11D2-A89A-00C04FBBCFA2}"
 
