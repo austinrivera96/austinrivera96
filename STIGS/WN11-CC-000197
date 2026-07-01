@@ -32,7 +32,7 @@ $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
 if (-not (Test-Path $regPath)) {
     New-Item -Path $regPath -Force | Out-Null
 }
-
+# Set DisableWindowsConsumerFeatures to 1 (0x00000001)
 New-ItemProperty -Path $regPath -Name "DisableWindowsConsumerFeatures" -PropertyType DWord -Value 1  -Force | Out-Null
 
 # Display the configured values
