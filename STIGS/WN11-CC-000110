@@ -37,3 +37,12 @@ if(-not(Test-Path $regPath)) {
 
 # Display configured values    
     Get-ItemProperty -Path $regPath -Name DisableHTTPPrinting
+-------
+# Should return:
+DisableHTTPPrinting : 1
+PSPath              : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows 
+                      NT\Printers\
+PSParentPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT
+PSChildName         : Printers
+PSDrive             : HKLM
+PSProvider          : Microsoft.PowerShell.Core\Registry
