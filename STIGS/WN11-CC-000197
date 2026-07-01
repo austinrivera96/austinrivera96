@@ -35,5 +35,5 @@ if (-not (Test-Path $regPath)) {
 
 New-ItemProperty -Path $regPath -Name "DisableWindowsConsumerFeatures" -PropertyType DWord -Value 1  -Force | Out-Null
 
-#
+# Display the configured values
 Get-ItemProperty -Path $regPath -Name "DisableWindowsConsumerFeatures"
