@@ -25,11 +25,10 @@
     Example syntax:
     PS C:\> .\WN11-CC-000315.ps1 
 
-
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Installer" -Force
 
-# Set DisableWindowsConsumerFeatures to 0 (0x00000000)
+# Set AlwaysInstallElevated to 0
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Installer" -Name AlwaysInstallElevated -Type DWord -Value 0
 
-#
+# Display configured values
 Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Installer" -Name AlwaysInstallElevated
