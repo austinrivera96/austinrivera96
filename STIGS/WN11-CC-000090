@@ -1,3 +1,30 @@
+#
+.SYNOPSIS
+    Remediates STIG WN11-CC-000197 by disabling Windows consumer features
+
+.NOTES
+    Author          : Austin Rivera
+    LinkedIn        : linkedin.com/in/austin-rivera-721448245
+    GitHub          : https://github.com/austinrivera96/austinrivera96
+    Date Created    : 2026-07-01
+    Last Modified   : 2026-07-01
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN11-CC-000090
+    Documentation   : https://stigaview.com/products/win11/v2r7/WN11-CC-000090/
+
+.TESTED ON
+    Date(s) Tested  : 2026-07-01
+    Tested By       : Austin Rivera
+    Systems Tested  : Austin-MDR (Windows 11)
+    PowerShell Ver. : 
+
+.USAGE
+    Put any usage instructions here.
+    Example syntax:
+    PS C:\> .\STIG-ID-WN11-CC-000197.ps1 
+
 $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{35378EAC-683F-11D2-A89A-00C04FBBCFA2}"
 
 # Create the registry path if it doesn't exist
