@@ -35,4 +35,13 @@ if(-not(Test-Path $regPath)) {
     New-ItemProperty -Path $regPath -Name DeviceEnumerationPolicy -PropertyType DWord -Value 0 -Force | Out-Null
 
 # Display configured value
-    Get-ItemProperty -Path $regPath -Name DeviceEnumerationPolicy
+    Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Kernel DMA Protection" -Name DeviceEnumerationPolicy
+
+#Should return:DeviceEnumerationPolicy : 0
+PSPath                  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Kernel 
+                          DMA Protection
+PSParentPath            : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows
+PSChildName             : Kernel DMA Protection
+PSDrive                 : HKLM
+PSProvider              : Microsoft.PowerShell.Core\Registry
+
