@@ -72,4 +72,4 @@ else {
 }
 
 # Display the configured values
-Get-ItemProperty -Path $regPath -Name UseAdvancedStartup, UseTPMPIN, UseTPMKeyPIN
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\FVE" -Name UseAdvancedStartup, UseTPMPIN, UseTPMKeyPIN
