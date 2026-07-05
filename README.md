@@ -1,5 +1,4 @@
-- austinrivera96/README .md
--
+austinrivera96/README .md
 
 # <a href="https://www.linkedin.com/in/austin-rvera-721448245">Austin Rivera</a>'s IT and Cybersecurity Project Portfolio 🔐
 
