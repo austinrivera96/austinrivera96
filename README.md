@@ -14,6 +14,7 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 - **[NorthPeak Descent Scenario (Valid Credential Usage and Living-off-the-Land)](https://github.com/austinrivera96/Northpeak-Descent-Threathunt
 <hr/>)**
 
+
 ## 🤳 Connect With Me
 
 [<img align="left" alt=" Austin | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
