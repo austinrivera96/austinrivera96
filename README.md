@@ -12,6 +12,7 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 
 - **[Threat Hunting Scenario (Tor Browser Usage)](https://github.com/austinrivera96/threat-hunting-scenario-tor)**
 - **[NorthPeak Descent Scenario (Valid Credential Usage and Living-off-the-Land)](https://github.com/austinrivera96/Northpeak-Descent-Threathunt)**
+- **[Just Another Day Scenario ()](https://github.com/austinrivera96/Just-Another-Day/tree/main)**
 
 
 ## 🤳 Connect With Me
