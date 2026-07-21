@@ -1,0 +1,35 @@
+#
+.SYNOPSIS
+	This script sets the account lockout threshold to 3. 
+
+.NOTES
+    Author          : Austin Rivera
+    LinkedIn        : linkedin.com/in/austin-rivera-721448245
+    GitHub          : https://github.com/austinrivera96/austinrivera96
+    Date Created    : 2026-07-21
+    Last Modified   : 2026-07-21
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN11-AC-000010
+    Documentation   : https://stigaview.com/products/win11/v2r8/WN11-AC-000010/
+
+.TESTED ON
+    Date(s) Tested  : 2026-07-21
+    Tested By       : Austin Rivera
+    Systems Tested  : Austin-MDR (Windows 11)
+    PowerShell Ver. :
+
+.USAGE
+    Put any usage instructions here.
+    Example syntax:
+    PS C:\> .\STIG-ID-WN11-AC-000010.ps1
+
+# Requires Administrator Privileges
+
+# Set Account Lockout Threshold to 3 failed logon attempts
+
+net accounts /lockoutthreshold:3
+
+# Verify setting
+net accounts
